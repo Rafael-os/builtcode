@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_10_131537) do
+ActiveRecord::Schema.define(version: 2021_06_10_135900) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,14 @@ ActiveRecord::Schema.define(version: 2021_06_10_131537) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["crm", "crm_uf"], name: "index_doctors_on_crm_and_crm_uf", unique: true
+  end
+
+  create_table "patients", force: :cascade do |t|
+    t.string "name"
+    t.date "birth_date"
+    t.string "cpf"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end

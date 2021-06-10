@@ -5,7 +5,7 @@ RSpec.describe Doctor, type: :model do
     described_class.new(name: 'Strange', crm: '1234', crm_uf: 'SP')
   }
 
-  describe 'Validation' do
+  describe 'Validations' do
     it 'is valid with valid attributes' do
       expect(subject).to be_valid
     end
