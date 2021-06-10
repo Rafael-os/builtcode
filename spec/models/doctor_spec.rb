@@ -1,42 +1,55 @@
 require 'rails_helper'
 
 RSpec.describe Doctor, type: :model do
-  describe 'validation' do
-    it 'has a name' do
-      doctor = Doctor.new(
-        name: "",
-        crm: "A valid CRM",
-        crm_uf: "A valid UF"
-      )
-      expect(doctor).to_not be_valid
-      doctor.name = "Strange"
-      expect(doctor).to be_valid
+  subject {
+    described_class.new(name: 'Strange', crm: '1234', crm_uf: 'SP')
+  }
+
+  describe 'Validation' do
+    it 'is valid with valid attributes' do
+      expect(subject).to be_valid
+    end
+
+    it 'is not valid without name' do
+      subject.name = ''
+      expect(subject).to_not be_valid
+      subject.name = nil
+      expect(subject).to_not be_valid
+    end
+
+    it 'is not valid without crm' do
+      subject.crm = ''
+      expect(subject).to_not be_valid
+      subject.crm = nil
+      expect(subject).to_not be_valid
+    end
+
+    it 'is not valid without crm_uf' do
+      subject.crm_uf = ''
+      expect(subject).to_not be_valid
+      subject.crm_uf = nil
+      expect(subject).to_not be_valid
     end
   
-    it 'has a crm' do
-      doctor = Doctor.new(
-        name: "Strange",
-        crm: "",
-        crm_uf: "A valid UF"
-      )
-      expect(doctor).to_not be_valid
-      doctor.crm = "3213"
-      expect(doctor).to be_valid
-    end
-    
-    it 'has a crm_uf' do
-      doctor = Doctor.new(
-        name: "Strange",
-        crm: "1232",
-        crm_uf: ""
-      )
-      expect(doctor).to_not be_valid
-      doctor.crm_uf = "SP"
-      expect(doctor).to be_valid
-    end
-  
-    context 'when CRM is not unique' do
+    context 'when crm is not unique' do
       before { described_class.create!(name: 'Strange', crm: '1234', crm_uf: 'SP') }
+      it 'is invalid if CRM is not unique' do
+        expect(subject).to be_invalid
+      end
+    end
+
+    context 'when crm number is the same but crm_uf is different' do
+      before { described_class.create!(name: 'Strange', crm: '1234', crm_uf: 'PR') }
+      it 'is valid if CRM share same number but different crm_uf' do
+        expect(subject).to be_valid
+      end
+    end
+
+    context 'when crm number is different but crm_uf is the same' do
+      before { described_class.create!(name: 'Strange', crm: '4321', crm_uf: 'SP') }
+      it 'is valid if CRM have different number but same crm_uf' do
+        expect(subject).to be_valid
+      end
     end
   end
 end
