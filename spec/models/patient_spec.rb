@@ -5,6 +5,16 @@ RSpec.describe Patient, type: :model do
     described_class.new(name: 'Joe', cpf: '12345678901', birth_date: Time.now)
   }
 
+  describe 'Relationships' do
+    it 'has many appointments' do
+      should respond_to(:appointments)
+    end
+
+    it 'has many doctors through appointments' do
+      should respond_to(:doctors)
+    end
+  end
+
   describe 'Validations' do
     it 'is valid with valid attributes' do
       expect(subject).to be_valid
