@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Doctor, type: :model do
   subject {
-    described_class.new(name: 'Strange', crm: '1234', crm_uf: 'SP')
+    described_class.new(name: 'Strange', crm: '1234', crm_uf: "SP")
   }
 
   describe 'Relationships' do

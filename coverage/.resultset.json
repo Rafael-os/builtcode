@@ -4,9 +4,32 @@
       "/home/rafael/code/Rafael-os/challenges/builtcode/spec/models/appointment_spec.rb": {
         "lines": [
           1,
+          1,
+          null,
+          1,
+          4,
+          4,
+          null,
+          1,
+          3,
+          null,
           null,
           1,
           1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -20,7 +43,7 @@
           1,
           1,
           null,
-          null,
+          3,
           null,
           null,
           null,
@@ -73,6 +96,7 @@
           null,
           null,
           1,
+          null,
           null,
           null,
           null
@@ -357,6 +381,17 @@
           null
         ]
       },
+      "/home/rafael/code/Rafael-os/challenges/builtcode/spec/factories/doctors.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
       "/home/rafael/code/Rafael-os/challenges/builtcode/config/routes.rb": {
         "lines": [
           1,
@@ -370,10 +405,45 @@
           null
         ]
       },
+      "/home/rafael/code/Rafael-os/challenges/builtcode/spec/support/factory_bot.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/rafael/code/Rafael-os/challenges/builtcode/spec/support/database_cleaner_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          23,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          23,
+          null,
+          null,
+          1,
+          23,
+          null,
+          null,
+          null
+        ]
+      },
       "/home/rafael/code/Rafael-os/challenges/builtcode/app/models/appointment.rb": {
         "lines": [
           1,
           1,
+          1,
+          null,
           1,
           null
         ]
@@ -554,6 +624,6 @@
         ]
       }
     },
-    "timestamp": 1623352752
+    "timestamp": 1623474680
   }
 }
