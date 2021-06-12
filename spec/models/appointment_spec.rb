@@ -25,4 +25,34 @@ RSpec.describe Appointment, type: :model do
     end
   end
 
+  context 'Time constraints' do
+    it 'cannot schedule for past dates' do
+      subject.starts_at = DateTime.now
+      expect(subject.starts_at.day - 1).to be_invalid
+    end
+
+    it 'cannot shcedule for past hours' do
+      subject.starts_at = DateTime.now
+      expect(subject.starts_at.hour - 1).to be_invalid
+    end
+
+    it 'cannot be earlier than 9 am' do
+      schedule_time = DateTime.new(2021,6,20,8)
+      subject.starts_at = schedule_time
+      expect(subject.starts_at.hour).to be_invalid
+    end
+
+    it 'cannot be later than 18' do
+      schedule_time = DateTime.new(2021,6,20,19)
+      subject.starts_at = schedule_time
+      expect(subject.starts_at.hour).to be_invalid
+    end
+
+    it 'cannot be schedule during lunch break' do
+      schedule_time = DateTime.new(2021,6,20,12)
+      subject.starts_at = schedule_time
+      expect(subject.starts_at.hour).to be_invalid
+    end
+  end
+
 end
