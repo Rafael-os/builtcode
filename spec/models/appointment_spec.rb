@@ -68,7 +68,7 @@ RSpec.describe Appointment, type: :model do
     end
 
     it 'cannot last more than 30 minutes' do
-      schedule_time = Time.new(2021,6,20,13)
+      schedule_time = Time.new(2022,6,20,13)
       finish_time = schedule_time + 1801
       subject.starts_at = schedule_time
       subject.ends_at = finish_time
