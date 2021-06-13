@@ -44,7 +44,7 @@ RSpec.describe Doctor, type: :model do
     context 'when crm is not unique' do
       before { described_class.create!(name: 'Strange', crm: '1234', crm_uf: 'SP') }
       it 'is invalid if CRM is not unique' do
-        expect(subject).to be_invalid
+        expect(subject).to_not be_valid
       end
     end
 
