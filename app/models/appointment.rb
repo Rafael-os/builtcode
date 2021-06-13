@@ -3,7 +3,7 @@ class Appointment < ApplicationRecord
   belongs_to :doctor
 
   validates :starts_at, :ends_at, presence: true
-  validate :start_date_not_past?, :start_hour_less_than_9?, :start_hour_more_than_18?, :lunch_break?
+  validate :start_date_not_past?, :start_hour_less_than_9?, :start_hour_more_than_18?, :lunch_break?, :consultation_time
 
   private
 
@@ -28,6 +28,12 @@ class Appointment < ApplicationRecord
   def lunch_break?
     if starts_at.present? && starts_at.hour >= 12 && starts_at.hour < 13
       errors.add :starts_at, "cannot schedule during lunch break"
+    end
+  end
+
+  def consultation_time
+    if starts_at.present? && ends_at.present? && ( ends_at - starts_at ) > 1800
+      errors.add :ends_at, "consult cannot last more than 30 minutes"
     end
   end
 end
