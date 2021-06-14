@@ -652,7 +652,7 @@
           null,
           null,
           1,
-          41,
+          39,
           null,
           null,
           1,
@@ -660,11 +660,11 @@
           null,
           null,
           1,
-          41,
+          39,
           null,
           null,
           1,
-          41,
+          39,
           null,
           null,
           null
@@ -934,34 +934,6 @@
           null,
           null,
           null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
           null
         ]
       },
@@ -1025,6 +997,24 @@
         ]
       },
       "/home/rafael/code/Rafael-os/challenges/builtcode/spec/views/appointments/update.html.erb_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/rafael/code/Rafael-os/challenges/builtcode/spec/views/doctors/create.html.erb_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/rafael/code/Rafael-os/challenges/builtcode/spec/views/doctors/destroy.html.erb_spec.rb": {
         "lines": [
           1,
           null,
@@ -1110,6 +1100,24 @@
           null
         ]
       },
+      "/home/rafael/code/Rafael-os/challenges/builtcode/spec/views/doctors/show.html.erb_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/rafael/code/Rafael-os/challenges/builtcode/spec/views/doctors/update.html.erb_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
       "/home/rafael/code/Rafael-os/challenges/builtcode/spec/views/patients/create.html.erb_spec.rb": {
         "lines": [
           1,
@@ -1134,6 +1142,26 @@
           null,
           1,
           1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          0,
+          null,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -1143,6 +1171,16 @@
           null,
           1,
           1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          0,
+          null,
           null
         ]
       },
@@ -1225,8 +1263,55 @@
           1,
           null
         ]
+      },
+      "/home/rafael/code/Rafael-os/challenges/builtcode/app/controllers/patients_controller.rb": {
+        "lines": [
+          1,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          null,
+          1,
+          null,
+          1,
+          0,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1623684121
+    "timestamp": 1623685084
   }
 }
