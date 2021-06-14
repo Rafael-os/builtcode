@@ -1,13 +1,17 @@
 <div class="container">
-    <tr>
-      <th><%= doctor.name %></th>
-      <th><%= doctor.crm %></th>
-      <th><%= doctor.crm_uf %></th>
-      <th>
-        <%= link_to doctor_path(doctor), method: :delete, data: { confirm: 'Tem certeza?' } do%>
-          <i class="fas fa-trash"><i>
-        <% end %>
-      </th>
-      <th></th>
-    </tr>
+  <tr>
+    <th><%= doctor.name %></th>
+    <th><%= doctor.crm %></th>
+    <th><%= doctor.crm_uf %></th>
+    <th>
+      <%= link_to edit_doctor_path(doctor) do%>
+        <i class="fas fa-edit"></i>
+      <% end %>
+    </th>
+    <th>
+      <%= link_to doctor_path(doctor), method: :delete, data: { confirm: 'Tem certeza?' } do%>
+        <i class="fas fa-trash"></i>
+      <% end %>
+    </th>
+  </tr>
 </div>

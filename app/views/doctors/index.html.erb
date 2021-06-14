@@ -1,13 +1,19 @@
 <div class="container">
   <h1>Doctors#index</h1>
+  <h2>
+    <%= link_to "Adicionar medico", new_doctor_path %>
+  </h2>
   <table>
     <tr>
       <th>Nome</th>
       <th>CRM</th>
       <th>crm_uf</th>
+      <th>editar</th>
+      <th>apagar</th>
     </tr>
+  
+    <% @doctors.each do |doctor| %>
+      <%= render 'doctor', doctor: doctor %>
+    <% end %>
   </table>
-  <% @doctors.each do |doctor| %>
-    <%= render 'doctor', doctor: doctor %>
-  <% end %>
 </div>
