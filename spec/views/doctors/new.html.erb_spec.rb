@@ -1,5 +1,25 @@
 require 'rails_helper'
 
-RSpec.describe "doctors/new.html.erb", type: :view do
-  pending "add some examples to (or delete) #{__FILE__}"
+RSpec.describe "doctors/edit.html.erb", type: :view do
+  before(:each) do
+    @doctor = assign(:doctor, Doctor.create!(
+      name: "Strange",
+      crm: "1234",
+      crm_uf: "SP"
+    ))
+  end
+
+  it "renders the new doctor form" do
+    render
+
+    assert_select "form[action=?][method=?]", doctor_path(@doctor), "post" do
+    
+        assert_select "input[name=?]", "doctor[name]"
+
+        assert_select "input[name=?]", "doctor[crm]"
+
+        assert_select "input[name=?]", "doctor[crm_uf]"
+
+    end
+  end
 end
