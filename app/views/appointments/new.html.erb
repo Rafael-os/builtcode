@@ -3,8 +3,8 @@
     <%= simple_form_for @appointment do |f| %>
       <%= f.association :doctor, collection: Doctor.order(:name), prompt: "Selecione um doutor" %>
       <%= f.association :patient, collection: Patient.order(:name), prompt: "Selecione um paciente" %>
-      <%= f.input :starts_at %>
-      <%= f.input :ends_at %>
+      <%= f.input :starts_at, order: [:day, :month, :year] %>
+      <%= f.input :ends_at, order: [:day, :month, :year] %>
       <%= f.button :submit %>
     <% end %>
   </div>
