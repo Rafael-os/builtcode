@@ -1,6 +1,6 @@
 class DoctorsController < ApplicationController
   def index
-    @doctors = Doctor.order(created_at: :desc)
+    @doctors = Doctor.all
   end
 
   def create
