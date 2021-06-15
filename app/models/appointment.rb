@@ -3,7 +3,7 @@ class Appointment < ApplicationRecord
   belongs_to :doctor
 
   validates :starts_at, :ends_at, presence: true
-  validate :start_date_not_past?, :start_hour_less_than_9?, :start_hour_more_than_18?, :lunch_break?, :consultation_time, :consultation_period
+  validate :start_date_not_past?, :start_hour_less_than_9?, :start_hour_more_than_18?, :lunch_break?, :consultation_time, :consultation_period, :time_conflict?
 
   private
 
@@ -40,6 +40,14 @@ class Appointment < ApplicationRecord
   def consultation_period
     if starts_at.present? && ends_at.present? && ( ends_at - starts_at ) < 0
       errors.add :ends_at, "Consulta nao pode terminar antes de comecar"
+    end
+  end
+
+  def time_conflict?
+    if starts_at.present? && ends_at.present?
+      if Appointment.where('? < ends_at and ? > starts_at', starts_at, ends_at).any?
+        errors.add(:starts_at, 'overlaps')
+      end
     end
   end
 end
