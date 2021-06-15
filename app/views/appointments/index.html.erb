@@ -1,2 +1,21 @@
-<h1>Appointments#index</h1>
-<p>Find me in app/views/appointments/index.html.erb</p>
+<div class="container">
+  <h1>Consult#index</h1>
+  <h2>
+    <%= link_to "Criar nova consulta", new_appointment_path %>
+  </h2>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Doutor</th>
+      <th>Paciente</th>
+      <th>Horario da consulta</th>
+      <th>Horario de termino</th>
+      <th>Editar</th>
+      <th>Apagar</th>
+    </tr>
+  
+    <% @appointments.each do |appointment| %>
+      <%= render 'appointment', appointment: appointment %>
+    <% end %>
+  </table>
+</div>

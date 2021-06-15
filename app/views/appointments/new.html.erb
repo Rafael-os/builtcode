@@ -1,2 +1,11 @@
-<h1>Appointments#new</h1>
-<p>Find me in app/views/appointments/new.html.erb</p>
+<div class="container">
+  <div class="form-group">
+    <%= simple_form_for @appointment do |f| %>
+      <%= f.association :doctor, collection: Doctor.order(:name), prompt: "Selecione um doutor" %>
+      <%= f.association :patient, collection: Patient.order(:name), prompt: "Selecione um paciente" %>
+      <%= f.input :starts_at %>
+      <%= f.input :ends_at %>
+      <%= f.button :submit %>
+    <% end %>
+  </div>
+</div>
