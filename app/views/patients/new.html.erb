@@ -2,8 +2,8 @@
   <div class="form-group">
     <%= simple_form_for @patient do |f| %>
       <%= f.input :name %>
-      <%= f.input :birth_date %>
-      <%= f.input :cpf %>
+      <%= f.input :birth_date, as: :date, start_year: Date.today.year - 120, end_year: Date.today.year, order: [:day, :month, :year] %>
+      <%= f.input :cpf, input_html: { maxlength: 11 } %>
       <%= f.button :submit %>
     <% end %>
   </div>
