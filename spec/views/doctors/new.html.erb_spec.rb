@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "doctors/edit.html.erb", type: :view do
+RSpec.describe "doctors/new.html.erb", type: :view do
   before(:each) do
     @doctor = assign(:doctor, Doctor.create!(
       name: "Strange",
@@ -17,8 +17,6 @@ RSpec.describe "doctors/edit.html.erb", type: :view do
         assert_select "input[name=?]", "doctor[name]"
 
         assert_select "input[name=?]", "doctor[crm]"
-
-        assert_select "input[name=?]", "doctor[crm_uf]"
 
     end
   end

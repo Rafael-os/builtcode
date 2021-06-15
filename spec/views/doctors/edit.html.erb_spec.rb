@@ -18,8 +18,6 @@ RSpec.describe "doctors/edit.html.erb", type: :view do
 
         assert_select "input[name=?]", "doctor[crm]"
 
-        assert_select "input[name=?]", "doctor[crm_uf]"
-
     end
   end
 end
