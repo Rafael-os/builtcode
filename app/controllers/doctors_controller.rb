@@ -1,4 +1,6 @@
 class DoctorsController < ApplicationController
+  rescue_from ActiveRecord::InvalidForeignKey, with: :invalid_foreign_key
+
   def index
     @doctors = Doctor.all
   end
@@ -39,5 +41,9 @@ class DoctorsController < ApplicationController
 
   def doctor_params
     params.require(:doctor).permit(:name, :crm, :crm_uf)
+  end
+
+  def invalid_foreign_key
+    redirect_to doctors_path, alert: "Nao foi possivel deletar pois existe uma consulta dependente" 
   end
 end

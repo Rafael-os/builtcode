@@ -46,7 +46,7 @@ class Appointment < ApplicationRecord
   def time_conflict?
     if starts_at.present? && ends_at.present?
       if Appointment.where('? < ends_at and ? > starts_at', starts_at, ends_at).any?
-        errors.add(:starts_at, 'overlaps')
+        errors.add(:starts_at, 'Ja possui uma consulta neste horario')
       end
     end
   end
