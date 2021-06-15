@@ -1,2 +1,10 @@
-<h1>Patients#new</h1>
-<p>Find me in app/views/patients/new.html.erb</p>
+<div class="container">
+  <div class="form-group">
+    <%= simple_form_for @patient do |f| %>
+      <%= f.input :name %>
+      <%= f.input :birth_date %>
+      <%= f.input :cpf %>
+      <%= f.button :submit %>
+    <% end %>
+  </div>
+</div>

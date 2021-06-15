@@ -1,0 +1,17 @@
+<div class="container">
+  <tr>
+    <th><%= patient.name %></th>
+    <th><%= patient.cpf %></th>
+    <th><%= patient.birth_date %></th>
+    <th>
+      <%= link_to edit_patient_path(patient) do%>
+        <i class="fas fa-edit"></i>
+      <% end %>
+    </th>
+    <th>
+      <%= link_to patient_path(patient), method: :delete, data: { confirm: 'Tem certeza?' } do%>
+        <i class="fas fa-trash"></i>
+      <% end %>
+    </th>
+  </tr>
+</div>
