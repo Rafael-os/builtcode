@@ -648,6 +648,43 @@
           null
         ]
       },
+      "/home/rafael/code/Rafael-os/challenges/builtcode/app/helpers/states_helper.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          8,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
       "/home/rafael/code/Rafael-os/challenges/builtcode/spec/support/database_cleaner_spec.rb": {
         "lines": [
           1,
@@ -705,7 +742,7 @@
           null,
           1,
           9,
-          1,
+          2,
           null,
           null,
           null,
@@ -1499,6 +1536,6 @@
         ]
       }
     },
-    "timestamp": 1623753181
+    "timestamp": 1623759078
   }
 }

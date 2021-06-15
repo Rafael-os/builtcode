@@ -3,7 +3,7 @@
     <%= simple_form_for @doctor do |f| %>
       <%= f.input :name %>
       <%= f.input :crm %>
-      <%= f.input :crm_uf %>
+      <%= f.input :crm_uf, collection: brazilian_states %>
       <%= f.button :submit %>
     <% end %>
   </div>
