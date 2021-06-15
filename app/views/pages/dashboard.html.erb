@@ -1,0 +1,15 @@
+<div class="container">
+  <div>
+    Consultas realizadas:
+    <%= @finished_appointments %>
+  </div>
+  
+  <% @ordered.each do |doctor| %>
+    <div>
+    <%= doctor.id %>
+    <%= doctor.name %>
+    <%= "#{doctor.crm}-#{doctor.crm_uf} " %>
+    </div>
+  <% end %>
+
+</div>
