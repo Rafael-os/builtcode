@@ -1,20 +1,35 @@
 <div class="container">
-  <h1>Doctors#index</h1>
-  <h2>
-    <%= link_to "Adicionar medico", new_doctor_path %>
-  </h2>
-  <table>
-    <tr>
+  <h2>Lista de medicos</h2>
+  <p><%= link_to "Cadastrar medico", new_doctor_path, class: "btn btn-primary" %></p>
+
+  <table class="table" id="myTable">
+    <thead>
       <th>ID</th>
       <th>Nome</th>
       <th>CRM</th>
-      <th>crm_uf</th>
-      <th>editar</th>
-      <th>apagar</th>
-    </tr>
-  
-    <% @doctors.each do |doctor| %>
-      <%= render 'doctor', doctor: doctor %>
-    <% end %>
+      <th>Crm_uf</th>
+      <th>Editar</th>
+      <th>Apagar</th>
+    </thead>
+    <tbody>
+      <% @doctors.each do |doctor| %>
+        <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+          <td><%= doctor.id %></td>
+          <td><%= doctor.name %></td>
+          <td><%= doctor.crm %></td>
+          <td><%= doctor.crm_uf %></td>
+          <td>
+            <%= link_to edit_doctor_path(doctor) do%>
+              <i class="fas fa-edit"></i>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to doctor_path(doctor), method: :delete, data: { confirm: 'Tem certeza?' } do%>
+              <i class="fas fa-trash"></i>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
   </table>
 </div>
