@@ -1,10 +1,11 @@
 <div class="container">
   <div class="form-group">
+    <h2>Cadastro de medico</h2>
     <%= simple_form_for @doctor do |f| %>
-      <%= f.input :name %>
-      <%= f.input :crm %>
-      <%= f.input :crm_uf, collection: brazilian_states %>
-      <%= f.button :submit %>
+      <%= f.input :name, label: "Nome"%>
+      <%= f.input :crm, label: "Numero do CRM" %>
+      <%= f.input :crm_uf, label: "Estado do CRM", collection: brazilian_states %>
+      <%= f.button :submit, 'Cadastrar', class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>
