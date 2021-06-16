@@ -20,7 +20,7 @@ class Appointment < ApplicationRecord
   end
       
   def start_hour_more_than_18?
-    if starts_at.present? && starts_at.hour > 18
+    if starts_at.present? && starts_at.hour >= 18
       errors.add :starts_at, "Consulta tem que ser antes das 18:00"
     end
   end

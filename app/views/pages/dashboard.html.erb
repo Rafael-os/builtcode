@@ -1,15 +1,29 @@
 <div class="container">
   <div>
-    Consultas realizadas:
-    <%= @finished_appointments %>
-  </div>
-  
-  <% @ordered.each do |doctor| %>
     <div>
-    <%= doctor.id %>
-    <%= doctor.name %>
-    <%= "#{doctor.crm}-#{doctor.crm_uf} " %>
     </div>
-  <% end %>
-
+    <div>
+    </div>
+  </div>
+  <h1>Lista de doutores cadastrado no sistema</h1>
+  <div class="input-wrapper mb-1">
+    <input type="text" id="myInput" placeholder="Procurar doutor/a" data-action="input->table#search">
+    <label class="fa fa-search" aria-hidden="true"></label>
+  </div>
+  <table class="table" id="myTable">
+    <thead>
+      <th>ID</th>
+      <th>Nome</th>
+      <th>CRM</th>
+    </thead>
+    <tbody>
+      <% @ordered.each do |doctor| %>
+        <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+          <td><%= doctor.id %></td>
+          <td><%= doctor.name %></td>
+          <td><%= "#{doctor.crm}/#{doctor.crm_uf}" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>

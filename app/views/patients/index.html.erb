@@ -12,7 +12,7 @@
       <th>Apagar</th>
     </thead>
     <tbody>
-      <% @patients.each do |patient| %>
+      <% @ordered.each do |patient| %>
         <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
           <td><%= patient.id %></td>
           <td><%= patient.name %></td>
