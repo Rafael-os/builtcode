@@ -1,10 +1,29 @@
-<div class="container">
-  <div class="form-group">
-    <%= simple_form_for @patient do |f| %>
-      <%= f.input :name %>
-      <%= f.input :birth_date, as: :date, start_year: Date.today.year - 120, end_year: Date.today.year, order: [:day, :month, :year] %>
-      <%= f.input :cpf, input_html: { maxlength: 11 } %>
-      <%= f.button :submit %>
-    <% end %>
+<div class="container register-form">
+  <div class="form">
+    <div class="note">
+        <p>Editar paciente.</p>
+    </div>
+    <div class="form-content">
+      <%= simple_form_for @patient do |f| %>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <%= f.input :name, label: "Nome", input_html: { class: "form-control" } %>
+            </div>
+            <div class="form-group">
+              <%= f.input :birth_date, as: :date, start_year: Date.today.year - 120, end_year: Date.today.year, order: [:day, :month, :year], label: "Dia do nascimento", input_html: { class: "form-control" } %>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+            </div>
+            <div class="form-group">
+              <%= f.input :cpf, label: "CPF", input_html: { maxlength: 11, class: "form-control" }  %>
+            </div>
+          </div>
+        </div>
+        <%= f.button :submit, 'Editar', class: "btnSubmit form-control" %>
+        <% end %>
+    </div>
   </div>
 </div>

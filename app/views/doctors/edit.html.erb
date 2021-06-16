@@ -1,11 +1,29 @@
-<div class="container">
-  <div class="form-group">
-    <h2>Editar medico</h2>
-    <%= simple_form_for @doctor do |f| %>
-      <%= f.input :name, label: "Nome"%>
-      <%= f.input :crm, label: "Numero do CRM" %>
-      <%= f.input :crm_uf, label: "Estado do CRM", collection: brazilian_states %>
-      <%= f.button :submit, 'Editar', class: "btn btn-primary" %>
-    <% end %>
+<div class="container register-form">
+  <div class="form">
+    <div class="note">
+        <p>Editar médico.</p>
+    </div>
+    <div class="form-content">
+      <%= simple_form_for @doctor do |f| %>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <%= f.input :name, label: "Nome", input_html: { class: "form-control" } %>
+            </div>
+            <div class="form-group">
+              <%= f.input :crm, label: "Numero do CRM", input_html: { class: "form-control" }%>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+            </div>
+            <div class="form-group">
+              <%= f.input :crm_uf, label: "Estado do CRM", collection: brazilian_states, input_html: { class: "form-control" } %>
+            </div>
+          </div>
+        </div>
+        <%= f.button :submit, 'Editar', class: "btnSubmit form-control" %>
+        <% end %>
+    </div>
   </div>
 </div>
