@@ -6,12 +6,14 @@
     </div>
     <div class="info-consultation">
       <p>Quantidade de pacientes diferentes no periodo:</p>
-      <%= form_tag root_path, method: :get do %>
-        <%= text_field_tag 'search[date_from]', @search.date_from %>
-        <%= text_field_tag 'search[date_to]', @search.date_to %>
-        <%= submit_tag 'Search' %>
-      <% end %>
-      <p><%= @numbers %></p>
+      <p><%= @patients_number %></p>
+      <div>
+        <%= form_for :search, method: :get do |f| %>
+          <%= f.date_field :start_date %>
+          <%= f.date_field :end_date %>
+          <%= f.submit 'Procurar' %>
+        <% end %>
+      </div>
     </div>
   </div>
   <h1>Lista de doutores cadastrado no sistema</h1>
