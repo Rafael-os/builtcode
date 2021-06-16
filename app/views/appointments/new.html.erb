@@ -1,11 +1,30 @@
-<div class="container">
-  <div class="form-group">
-    <%= simple_form_for @appointment do |f| %>
-      <%= f.association :doctor, collection: Doctor.order(:name), prompt: "Selecione um doutor" %>
-      <%= f.association :patient, collection: Patient.order(:name), prompt: "Selecione um paciente" %>
-      <%= f.input :starts_at, order: [:day, :month, :year] %>
-      <%= f.input :ends_at, order: [:day, :month, :year] %>
-      <%= f.button :submit %>
-    <% end %>
+<div class="container register-form">
+  <div class="form">
+    <div class="note">
+        <p>Cadastrar consulta.</p>
+    </div>
+    <div class="form-content">
+      <%= simple_form_for @appointment do |f| %>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <%= f.association :doctor, label: "Doutor" ,collection: Doctor.order(:name), prompt: "Selecione um doutor", input_html: { class: "form-control" } %>
+            </div>
+            <div class="form-group">
+              <%= f.input :starts_at, order: [:day, :month, :year], label: "Dia e horario da consulta", input_html: { class: "form-date" } %>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <%=f.association :patient, label: "Paciente", collection: Patient.order(:name), prompt: "Selecione um paciente", input_html: { class: "form-control" }%>
+            </div>
+            <div class="form-group">
+              <%= f.input :ends_at, order: [:day, :month, :year], label: "Dia e horario do termino", input_html: { class: "form-date" }   %>
+            </div>
+          </div>
+        </div>
+        <%= f.button :submit, 'Cadastrar', class: "btnSubmit form-control" %>
+        <% end %>
+    </div>
   </div>
 </div>

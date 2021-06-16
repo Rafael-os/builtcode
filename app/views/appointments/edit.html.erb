@@ -1,2 +1,30 @@
-<h1>Appointments#edit</h1>
-<p>Find me in app/views/appointments/edit.html.erb</p>
+<div class="container register-form">
+  <div class="form">
+    <div class="note">
+        <p>Editar consulta.</p>
+    </div>
+    <div class="form-content">
+      <%= simple_form_for @appointment do |f| %>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <%= f.association :doctor, label: "Doutor" ,collection: Doctor.order(:name), prompt: "Selecione um doutor", input_html: { class: "form-control" } %>
+            </div>
+            <div class="form-group">
+              <%= f.input :starts_at, order: [:day, :month, :year], label: "Dia e horario da consulta", input_html: { class: "form-date" } %>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <%=f.association :patient, label: "Paciente", collection: Patient.order(:name), prompt: "Selecione um paciente", input_html: { class: "form-control" }%>
+            </div>
+            <div class="form-group">
+              <%= f.input :ends_at, order: [:day, :month, :year], label: "Dia e horario do termino", input_html: { class: "form-date" }   %>
+            </div>
+          </div>
+        </div>
+        <%= f.button :submit, 'Editar', class: "btnSubmit form-control" %>
+        <% end %>
+    </div>
+  </div>
+</div>
