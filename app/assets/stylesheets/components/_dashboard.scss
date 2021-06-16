@@ -1,0 +1,25 @@
+.infoboard {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 5px;
+  padding: 5px;
+}
+
+.info-quantity {
+  border-radius: 20px;
+  border: 2px solid;
+  width: 300px;
+  height: 100px;
+}
+
+.info-quantity p {
+  text-align: center;
+  font-weight: bold;
+}
+
+.info-consultation {
+  border-radius: 20px;
+  border: 2px solid;
+  width: 300px;
+  height: 150px;
+}
